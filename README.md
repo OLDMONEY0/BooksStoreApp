@@ -10,17 +10,18 @@ This application allows users to explore and search for books using the Google B
 
 
 ## Technologies
-- **Kotlin**: Основной язык разработки Android-приложений
-- **Room**: Для локального хранения данных
-- **Navigation Component**: Для управления навигацией в приложении
-- **View Binding**: Для удобной работы с представлениями
-- **RxJava**: Для асинхронной обработки данных
-- **Retrofit**: Для выполнения HTTP-запросов
-- **Moshi**: Для обработки JSON-ответов
-- **Picasso**: Для загрузки и отображения изображений
-- **Google Books API**: Для получения данных о книгах
-- **Lifecycle Components**: Для работы с `ViewModel` и `LiveData`
-- **Glide**: Для загрузки и кеширования изображений
+- **Kotlin**: Primary language for Android application development
+- **Room**: Local database management for offline data storage
+- **Navigation Component**: Handles navigation between fragments
+- **View Binding**: Simplifies interaction with XML views
+- **RxJava**: For asynchronous data processing and reactive programming
+- **Retrofit**: For making HTTP requests and interacting with RESTful APIs
+- **Moshi**: For JSON serialization and deserialization
+- **Picasso**: For loading and displaying images
+- **Google Books API**: To fetch book data
+- **Lifecycle Components**: For managing `ViewModel` and `LiveData`
+- **Glide**: For efficient image loading and caching
+
 
 
 ## Members
