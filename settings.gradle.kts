@@ -1,19 +1,8 @@
 pluginManagement {
     repositories {
-        google {
-            content {
-                includeGroupByRegex("com\\.android.*")
-                includeGroupByRegex("com\\.google.*")
-                includeGroupByRegex("androidx.*")
-            }
-        }
+        google()
         mavenCentral()
         gradlePluginPortal()
-    }
-
-    plugins {
-        // Добавляем плагин Safe Args
-        id("androidx.navigation.safeargs") version "2.7.2"
     }
 }
 dependencyResolutionManagement {

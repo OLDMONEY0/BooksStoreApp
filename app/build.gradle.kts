@@ -47,43 +47,42 @@ android {
 dependencies {
 
     implementation(libs.androidx.core.ktx)
-    implementation("androidx.appcompat:appcompat:1.6.1")
+    implementation(libs.androidx.appcompat)
     implementation(libs.material)
     implementation(libs.androidx.activity)
     implementation(libs.androidx.constraintlayout)
-    implementation("androidx.navigation:navigation-fragment-ktx:2.7.2")
-    implementation("androidx.navigation:navigation-ui-ktx:2.7.2")
-    testImplementation(libs.junit)
-    androidTestImplementation(libs.androidx.junit)
-    androidTestImplementation(libs.androidx.espresso.core)
-    testImplementation(libs.junit)
-    androidTestImplementation(libs.androidx.junit)
-    androidTestImplementation(libs.androidx.espresso.core)
+    implementation(libs.androidx.navigation.fragment.ktx)
+    implementation(libs.androidx.navigation.ui.ktx)
+    
+    // Room
+    implementation("androidx.room:room-runtime:2.6.1")
+    implementation("androidx.room:room-ktx:2.6.1")
+    kapt("androidx.room:room-compiler:2.6.1")
+    
+    // Moshi
     implementation(libs.moshi)
-    implementation("androidx.room:room-runtime:2.5.2")
-    kapt("androidx.room:room-compiler:2.5.2")
-    implementation(libs.picasso)
-
-    implementation("io.reactivex.rxjava2:rxjava:2.2.21")
-    implementation("io.reactivex.rxjava2:rxandroid:2.1.1")
-
-    // Retrofit с поддержкой RxJava2
-    implementation("com.squareup.retrofit2:adapter-rxjava2:2.9.0")
-    // Retrofit для API
+    kapt("com.squareup.moshi:moshi-kotlin-codegen:1.14.0")
+    
+    // Retrofit
     implementation(libs.retrofit)
     implementation(libs.converter.moshi)
-
-    // Google Books API (включает доступ через REST)
-    implementation(libs.google.api.client)
-    implementation(libs.google.http.client.gson)
-
-    // Lifecycle (если нужно)
-    implementation(libs.androidx.lifecycle.extensions)
-    implementation(libs.androidx.lifecycle.runtime.ktx)
+    implementation("com.squareup.retrofit2:adapter-rxjava2:2.9.0")
+    
+    // RxJava
+    implementation("io.reactivex.rxjava2:rxjava:2.2.21")
+    implementation("io.reactivex.rxjava2:rxandroid:2.1.1")
+    
+    // Lifecycle
     implementation(libs.androidx.lifecycle.runtime.ktx)
     implementation(libs.androidx.lifecycle.viewmodel.ktx)
     implementation(libs.androidx.lifecycle.livedata.ktx)
-
-    implementation(libs.androidx.activity.ktx)
+    
+    // Image Loading
     implementation(libs.glide)
+    implementation(libs.picasso)
+    
+    // Testing
+    testImplementation(libs.junit)
+    androidTestImplementation(libs.androidx.junit)
+    androidTestImplementation(libs.androidx.espresso.core)
 }
