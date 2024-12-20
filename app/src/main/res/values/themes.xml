@@ -6,4 +6,10 @@
     </style>
 
     <style name="Theme.CryptoApp" parent="Base.Theme.CryptoApp" />
+
+    <style name="Theme.BooksStoreApp" parent="Theme.Material3.DayNight.NoActionBar">
+        <item name="colorPrimary">@color/gray</item>
+        <item name="colorPrimaryVariant">@color/black</item>
+        <item name="colorOnPrimary">@color/white</item>
+    </style>
 </resources>
