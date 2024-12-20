@@ -1,12 +1,13 @@
 package com.example.booksstoreapp.view.adapter
 
-import android.databinding.DataBindingUtil
-import android.support.v7.util.DiffUtil
 import android.view.LayoutInflater
 import android.view.ViewGroup
-import com.ant.books.R
-import com.ant.books.databinding.BookItemBinding
-import com.ant.books.db.Book
+import androidx.recyclerview.widget.DiffUtil
+import androidx.recyclerview.widget.ListAdapter
+import androidx.recyclerview.widget.RecyclerView
+import com.example.booksstoreapp.R
+import com.example.booksstoreapp.databinding.BookItemBinding
+import com.example.booksstoreapp.model.db.Book
 
 class BookListAdapter(
     private val showDescription: Boolean,
@@ -14,19 +15,17 @@ class BookListAdapter(
 ) : ListAdapter<Book, BookViewHolder>(BookDiffCallback()) {
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): BookViewHolder {
-        val binding: BookItemBinding = DataBindingUtil.inflate(
+        val binding = BookItemBinding.inflate(
             LayoutInflater.from(parent.context),
-            R.layout.book_item,
             parent,
             false
         )
 
         binding.showDescription = showDescription
 
-        // Устанавливаем callback нажатия на элемент
         binding.root.setOnClickListener {
-            binding.book?.let {
-                bookClickCallback?.invoke(it)
+            binding.book?.let { book ->
+                bookClickCallback?.invoke(book)
             }
         }
 
@@ -34,14 +33,13 @@ class BookListAdapter(
     }
 
     override fun onBindViewHolder(holder: BookViewHolder, position: Int) {
-        val book = getItem(position)
-        holder.bind(book)
+        holder.bind(getItem(position))
     }
 }
 
 class BookViewHolder(
     private val binding: BookItemBinding
-) : androidx.recyclerview.widget.RecyclerView.ViewHolder(binding.root) {
+) : RecyclerView.ViewHolder(binding.root) {
 
     fun bind(book: Book) {
         binding.book = book

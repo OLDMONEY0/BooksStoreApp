@@ -1,12 +1,11 @@
 package com.example.booksstoreapp.model.api
 
-import android.os.Parcelable
+import com.example.booksstoreapp.model.db.Book
 import com.squareup.moshi.Json
-import com.squareup.moshi.JsonClass
-import kotlinx.android.parcel.Parcelize
 
-@Parcelize
-@JsonClass(generateAdapter = true)
-
-data class BooksResponse(@Json(name = "totalItems") val totalItems: Int,
-                         @Json(name = "items") val items: List<BookResult>) : Parcelable
+data class BooksResponse(
+    @Json(name = "items")
+    val books: List<Book>,
+    @Json(name = "totalItems")
+    val totalItems: Int
+)

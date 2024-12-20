@@ -1,13 +1,17 @@
 package com.example.booksstoreapp.model.api
 
-import android.os.Parcelable
-import com.squareup.moshi.Json
-import com.squareup.moshi.JsonClass
-import kotlinx.android.parcel.Parcelize
+import androidx.room.TypeConverters
+import com.example.booksstoreapp.model.db.Converters
 
-@Parcelize
-@JsonClass(generateAdapter = true)
-data class VolumeInfo(@Json(name = "title") val title: String,
-                      @Json(name = "subtitle") val subtitle: String,
-                      @Json(name = "authors") val authors: List<String>,
-                      @Json(name = "description") val description: String) : Parcelable
+data class VolumeInfo(
+    val title: String,
+    val subtitle: String?,
+    @TypeConverters(Converters::class)
+    val authors: List<String>?,
+    val description: String?,
+    val imageLinks: ImageLinks? = null
+)
+
+data class ImageLinks(
+    val thumbnail: String?
+)
